@@ -12,7 +12,9 @@ const TodoList = () => {
 		isError,
 		error,
 		data: todos,
-	} = useQuery('todos', getTodos);
+	} = useQuery('todos', getTodos, {
+		select: (data) => data.sort((a, b) => b.id - a.id),
+	});
 
 	const addTodoMutation = useMutation(addTodo, {
 		onSuccess: () => {

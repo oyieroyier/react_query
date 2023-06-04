@@ -18,12 +18,12 @@ export const addTodo = async (todo) => {
 
 // UPDATE function
 export const updateTodo = async (todo) => {
-	return await todosApi.patch(`/todos${todo.id}`, todo);
+	return await todosApi.patch(`/todos/${todo.id}`, todo);
 };
 
 // DELETE function
 export const deleteTodo = async ({ id }) => {
-	return await todosApi.delete(`/todos${id}`, id);
+	return await todosApi.delete(`/todos/${id}`, id);
 };
 
 export default todosApi;
